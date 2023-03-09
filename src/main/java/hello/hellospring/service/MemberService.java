@@ -49,4 +49,13 @@ public class MemberService {
     public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
+
+    /**
+     * 회원 이름 수정
+     */
+    public Long editMember(String curName, String editName) {
+        Member curMember = memberRepository.findByName(curName).get();
+        curMember.setName(editName);
+        return curMember.getId();
+    }
 }

@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <form action="/members/edit" method="post">
+    <div class="form-group">
+      <label for="currentName">현재 이름</label>
+      <input type="text" id="currentName" name="currentName" placeholder="현재 이름을 입력하세요">
+
+      <label for="editName">바꿀 이름</label>
+      <input type="text" id="editName" name="editName" placeholder="바꿀 이름을 입력하세요">
+    </div>
+    <button type="submit">수정</button>
+  </form>
+</div> <!-- /container -->
+</body>
+</html>

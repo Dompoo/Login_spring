@@ -41,4 +41,18 @@ public class MemberController {
         model.addAttribute("members", members);
         return "members/memberList";
     }
+
+    @GetMapping("/members/edit")
+    public String editForm() {
+        return "members/editMemberForm";
+    }
+
+    @PostMapping("/members/edit")
+    public String edit(EditMemberForm form) { //spring이 자동으로 정보를 넣어 준다.
+
+        //System.out.println("cur, edit = " + form.getCurrentName() + ", " + form.getEditName());
+        memberService.editMember(form.getCurrentName(),form.getEditName());
+
+        return "redirect:/";
+    }
 }
