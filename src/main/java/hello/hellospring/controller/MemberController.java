@@ -1,5 +1,7 @@
 package hello.hellospring.controller;
 
+import hello.hellospring.controller.form.EditMemberForm;
+import hello.hellospring.controller.form.MemberForm;
 import hello.hellospring.domain.Member;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +34,10 @@ public class MemberController {
 
         memberService.join(member);
 
-        return "redirect:/";
+        return "redirect:/members";
     }
 
-    @GetMapping("/members")
+    @GetMapping("/members/list")
     public String list(Model model) {
         List<Member> members = memberService.findMembers();
         model.addAttribute("members", members);
@@ -53,7 +55,7 @@ public class MemberController {
         //System.out.println("cur, edit = " + form.getCurrentName() + ", " + form.getEditName());
         memberService.editMember(form.getCurrentName(),form.getEditName());
 
-        return "redirect:/";
+        return "redirect:/members";
     }
 
     @GetMapping("/members/delete")
@@ -65,6 +67,6 @@ public class MemberController {
     public String delete(MemberForm form) { //spring이 자동으로 정보를 넣어 준다.
         memberService.deleteMember(form.getName());
 
-        return "redirect:/";
+        return "redirect:/members";
     }
 }

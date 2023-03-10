@@ -8,6 +8,11 @@ public class HomeController {
 
     @GetMapping("/") //welcome page 보다 앞선다.
     public String home() {
-        return "home";
+        return "homePage";
+    }
+
+    @GetMapping("/members")
+    public String member() {
+        return "members/memberPage";
     }
 }

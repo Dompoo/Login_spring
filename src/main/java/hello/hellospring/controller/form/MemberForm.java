@@ -1,4 +1,4 @@
-package hello.hellospring.controller;
+package hello.hellospring.controller.form;
 
 public class MemberForm {
     private String name; //html의 name과 이름을 같게 만들어야 함.

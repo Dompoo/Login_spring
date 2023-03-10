@@ -1,6 +1,7 @@
-package hello.hellospring.repository;
+package hello.hellospring.repository.legacy;
 
 import hello.hellospring.domain.Member;
+import hello.hellospring.repository.MemberRepository;
 
 import javax.persistence.EntityManager;
 import java.util.List;

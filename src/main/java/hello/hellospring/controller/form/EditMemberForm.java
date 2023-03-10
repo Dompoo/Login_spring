@@ -1,4 +1,4 @@
-package hello.hellospring.controller;
+package hello.hellospring.controller.form;
 
 public class EditMemberForm {
     private String currentName;
