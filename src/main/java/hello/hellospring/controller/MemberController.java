@@ -29,10 +29,8 @@ public class MemberController {
 
     @PostMapping("/members/new")
     public String create(MemberForm form) { //spring이 자동으로 정보를 넣어 준다.
-        Member member = new Member();
-        member.setName(form.getName());
 
-        memberService.join(member);
+        memberService.join(form.getName());
 
         return "redirect:/members";
     }
