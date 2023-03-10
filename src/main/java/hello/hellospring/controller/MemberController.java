@@ -55,4 +55,16 @@ public class MemberController {
 
         return "redirect:/";
     }
+
+    @GetMapping("/members/delete")
+    public String deleteForm() {
+        return "members/deleteMemberForm";
+    }
+
+    @PostMapping("/members/delete")
+    public String delete(MemberForm form) { //spring이 자동으로 정보를 넣어 준다.
+        memberService.deleteMember(form.getName());
+
+        return "redirect:/";
+    }
 }

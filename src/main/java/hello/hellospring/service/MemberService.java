@@ -58,4 +58,11 @@ public class MemberService {
         curMember.setName(editName);
         return curMember.getId();
     }
+
+    public Long deleteMember(String name) {
+        Member deleteMember = memberRepository.findByName(name).get();
+        Long returnId = deleteMember.getId();
+        memberRepository.deleteByName(name);
+        return returnId;
+    }
 }

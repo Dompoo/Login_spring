@@ -37,6 +37,11 @@ public class JpaMemberRepository implements MemberRepository {
     }
 
     @Override
+    public Optional<Member> deleteByName(String name) {
+        return Optional.empty();
+    }
+
+    @Override
     public List<Member> findAll() {
         return em.createQuery("select m from Member m", Member.class)
                 .getResultList();

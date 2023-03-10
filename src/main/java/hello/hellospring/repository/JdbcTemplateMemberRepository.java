@@ -49,6 +49,11 @@ public class JdbcTemplateMemberRepository implements MemberRepository {
         return result.stream().findAny();
     }
 
+    @Override
+    public Optional<Member> deleteByName(String name) {
+        return Optional.empty();
+    }
+
     private RowMapper<Member> memberRowMapper() {
         return (rs, rowNum) -> {
             Member member = new Member();
